@@ -2,13 +2,13 @@
 
 # 🛒 Ecommerce Management System — Backend REST API
 
-**Scalable E-Commerce Backend Architected with Java 17, Spring Boot 3, Hibernate / Spring Data JPA, Spring Security (JWT), PostgreSQL, Maven, and Razorpay**
+**Scalable E-Commerce Backend Architected with Java, Spring Boot, Hibernate / Spring Data JPA, Spring Security (JWT), PostgreSQL, Maven, and Razorpay**
 
-[![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.2-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Hibernate](https://img.shields.io/badge/Hibernate-JPA-59666C?style=for-the-badge&logo=hibernate&logoColor=white)](https://hibernate.org/)
 [![Spring Security](https://img.shields.io/badge/Spring_Security-JWT-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)](https://spring.io/projects/spring-security)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
 [![Razorpay](https://img.shields.io/badge/Razorpay-Payment_Gateway-02042B?style=for-the-badge&logo=razorpay&logoColor=3395FF)](https://razorpay.com/)
 [![Postman](https://img.shields.io/badge/Postman-API_Testing-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://www.postman.com/)
@@ -22,7 +22,7 @@
 **Ecommerce Management System** is a production-grade, stateless **Java Spring Boot RESTful Backend** built with **Maven (`pom.xml`)**. It provides high-performance APIs for user authentication, role-based access control, dynamic multi-criteria product filtering, persistent cart management, inventory-safe order processing, real-time order milestone tracking, and **Razorpay** payment signature verification.
 
 ### ✨ Key Backend Engineering Highlights
-- **Layered Architecture**: Clean separation of concerns across `Controller` $\rightarrow$ `Service` $\rightarrow$ `Repository` $\rightarrow$ `Database (PostgreSQL)` using **Spring Boot 3** and **Hibernate ORM**.
+- **Layered Architecture**: Clean separation of concerns across `Controller` $\rightarrow$ `Service` $\rightarrow$ `Repository` $\rightarrow$ `Database (PostgreSQL)` using **Spring Boot** and **Hibernate ORM**.
 - **Stateless JWT Security**: Implemented `JwtAuthenticationFilter` (`OncePerRequestFilter`), HMAC-SHA256 token signing via `JwtTokenProvider`, `BCryptPasswordEncoder`, and Role-Based Access Control (`ROLE_CUSTOMER`, `ROLE_ADMIN`).
 - **Dynamic Product Filtering & Pagination**: Indexed PostgreSQL tables (`idx_product_category`, `idx_product_price`) with parameterized JPQL queries supporting category, brand, price range, minimum rating, keyword search, sorting, and pagination.
 - **Transactional Order Processing & Razorpay Integration**: ACID-compliant `@Transactional` order placement with automatic stock deduction, **Razorpay Order API** creation, and cryptographic HMAC-SHA256 payment signature verification.
@@ -36,7 +36,7 @@
 flowchart LR
     Client["API Consumer / Postman / Swagger"] -->|HTTPS + Bearer JWT| Filter["JwtAuthenticationFilter (Spring Security)"]
 
-    subgraph SpringBoot ["Spring Boot 3 Application (Maven)"]
+    subgraph SpringBoot ["Spring Boot Application (Maven)"]
         Filter --> AuthCtrl["AuthController"]
         Filter --> ProdCtrl["ProductController"]
         Filter --> CartCtrl["CartController"]
@@ -60,7 +60,7 @@ flowchart LR
 
 ```text
 ecommerce-management-system/
-├── pom.xml                                  # Root Maven Configuration (Java 17, Spring Boot 3.2.5)
+├── pom.xml                                  # Root Maven Configuration (Java, Spring Boot)
 ├── postman/
 │   └── Ecommerce_Management_System.postman_collection.json
 └── src/
@@ -103,7 +103,7 @@ ecommerce-management-system/
     │       └── application.yml              # PostgreSQL, Hibernate, JWT & Razorpay Config
     └── test/
         └── java/com/santhosh/ecommerce/
-            └── EcommerceApplicationTests.java # JUnit 5 & Mockito Unit Tests
+            └── EcommerceApplicationTests.java
 ```
 
 ---
@@ -131,38 +131,24 @@ ecommerce-management-system/
 
 ## 🚀 Build & Run with Maven
 
-### Prerequisites
-- **Java 17+**
-- **Apache Maven 3.8+**
-- **PostgreSQL 14+**
-
-### 1️⃣ Configure PostgreSQL Database
-```sql
-CREATE DATABASE ecommerce_db;
-```
-
-### 2️⃣ Build & Run Application
 ```bash
 # Clone the repository
 git clone https://github.com/SanthoshBussa/ecommerce-management-system.git
 cd ecommerce-management-system
 
-# Run unit tests with Maven
-mvn clean test
-
 # Start the Spring Boot backend server
 mvn spring-boot:run
 ```
 - **REST API Base URL**: `http://localhost:8080/api/v1`
-- **Swagger UI / OpenAPI Docs**: `http://localhost:8080/swagger-ui.html`
 - **Postman Collection**: Import [`postman/Ecommerce_Management_System.postman_collection.json`](./postman/Ecommerce_Management_System.postman_collection.json) into Postman.
 
 ---
 
 ## 👨‍💻 Author
 
-**Santhosh Bussa** — *Java Backend Developer*
+**Santhosh Bussa** — *Java Backend Developer (1.6+ Years Experience)*
 - 📍 Location: Bangalore, Karnataka, India
+- 🌐 Portfolio: [santhosh-bussa-portfolio.onrender.com](https://santhosh-bussa-portfolio.onrender.com)
 - 💼 LinkedIn: [linkedin.com/in/santhosh-bussa](https://www.linkedin.com/in/santhosh-bussa)
 - 🐙 GitHub: [github.com/SanthoshBussa](https://github.com/SanthoshBussa)
 - 📧 Email: [iamsanthoshbussa@gmail.com](mailto:iamsanthoshbussa@gmail.com)
