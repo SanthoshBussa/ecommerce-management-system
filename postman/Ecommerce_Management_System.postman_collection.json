@@ -1,0 +1,131 @@
+{
+  "info": {
+    "name": "Ecommerce Management System API",
+    "_postman_id": "b8c4e7f0-91a2-4d3e-8f12-901234567890",
+    "description": "RESTful API collection for Ecommerce Management System (Spring Boot + Spring Security JWT + PostgreSQL + Razorpay)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api/v1"
+    },
+    {
+      "key": "jwtToken",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Authentication (JWT)",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/auth/register", "host": ["{{baseUrl}}"], "path": ["auth", "register"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Santhosh Bussa\",\n  \"email\": \"santhosh@example.com\",\n  \"password\": \"SecurePass@123\",\n  \"phone\": \"+91 6305344901\",\n  \"address\": \"Hyderabad, Telangana, India\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"santhosh@example.com\",\n  \"password\": \"SecurePass@123\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Products & Dynamic Filtering",
+      "item": [
+        {
+          "name": "Filter & Sort Products",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/products?category=electronics&minPrice=1000&maxPrice=90000&minRating=4.0&sortBy=price&sortDir=asc&page=0&size=12",
+              "host": ["{{baseUrl}}"],
+              "path": ["products"],
+              "query": [
+                { "key": "category", "value": "electronics" },
+                { "key": "minPrice", "value": "1000" },
+                { "key": "maxPrice", "value": "90000" },
+                { "key": "minRating", "value": "4.0" },
+                { "key": "sortBy", "value": "price" },
+                { "key": "sortDir", "value": "asc" },
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "12" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Product By ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/products/1", "host": ["{{baseUrl}}"], "path": ["products", "1"] }
+          }
+        },
+        {
+          "name": "List Categories",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/categories", "host": ["{{baseUrl}}"], "path": ["categories"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Orders, Tracking & Razorpay Payments",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{jwtToken}}" }
+            ],
+            "url": { "raw": "{{baseUrl}}/orders", "host": ["{{baseUrl}}"], "path": ["orders"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shippingAddress\": \"Plot 42, Hitech City, Hyderabad, Telangana - 500081\",\n  \"items\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 2\n    }\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Verify Razorpay Payment Signature",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{jwtToken}}" }
+            ],
+            "url": { "raw": "{{baseUrl}}/orders/verify-payment", "host": ["{{baseUrl}}"], "path": ["orders", "verify-payment"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderNumber\": \"ORD-8F92A1B3\",\n  \"razorpayOrderId\": \"order_P123456789\",\n  \"razorpayPaymentId\": \"pay_P987654321\",\n  \"razorpaySignature\": \"generated_hmac_sha256_signature\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Track Order Status Timeline",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/orders/track/ORD-8F92A1B3", "host": ["{{baseUrl}}"], "path": ["orders", "track", "ORD-8F92A1B3"] }
+          }
+        }
+      ]
+    }
+  ]
+}

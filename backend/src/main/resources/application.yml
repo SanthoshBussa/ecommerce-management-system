@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: ecommerce-management-system
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/ecommerce_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+    expiration-ms: 86400000 # 24 hours
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
+
+razorpay:
+  key-id: ${RAZORPAY_KEY_ID:rzp_test_placeholderKeyId}
+  key-secret: ${RAZORPAY_KEY_SECRET:placeholderKeySecret}
+  currency: INR
