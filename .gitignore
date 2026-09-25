@@ -1,4 +1,4 @@
-# Maven / Java
+# Maven / Java Build Artifacts
 target/
 *.jar
 *.war
@@ -6,13 +6,7 @@ target/
 .mvn/
 !.mvn/wrapper/maven-wrapper.jar
 
-# Node / React
-node_modules/
-dist/
-.env
-.env.local
-
-# IDEs
+# IDEs & Editors
 .idea/
 *.iml
 .vscode/
@@ -20,6 +14,6 @@ dist/
 .classpath
 .project
 
-# OS
+# OS Files
 .DS_Store
 Thumbs.db
