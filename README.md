@@ -5,11 +5,11 @@
 **Scalable E-Commerce Backend Architected with Java, Spring Boot, Hibernate / Spring Data JPA, Spring Security (JWT), PostgreSQL, Maven, and Razorpay**
 
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Hibernate](https://img.shields.io/badge/Hibernate-JPA-59666C?style=for-the-badge&logo=hibernate&logoColor=white)](https://hibernate.org/)
 [![Spring Security](https://img.shields.io/badge/Spring_Security-JWT-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)](https://spring.io/projects/spring-security)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
+[![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
 [![Razorpay](https://img.shields.io/badge/Razorpay-Payment_Gateway-02042B?style=for-the-badge&logo=razorpay&logoColor=3395FF)](https://razorpay.com/)
 [![Postman](https://img.shields.io/badge/Postman-API_Testing-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://www.postman.com/)
 
@@ -22,11 +22,11 @@
 **Ecommerce Management System** is a production-grade, stateless **Java Spring Boot RESTful Backend** built with **Maven (`pom.xml`)**. It provides high-performance APIs for user authentication, role-based access control, dynamic multi-criteria product filtering, persistent cart management, inventory-safe order processing, real-time order milestone tracking, and **Razorpay** payment signature verification.
 
 ### ✨ Key Backend Engineering Highlights
-- **Layered Architecture**: Clean separation of concerns across `Controller` $\rightarrow$ `Service` $\rightarrow$ `Repository` $\rightarrow$ `Database (PostgreSQL)` using **Spring Boot** and **Hibernate ORM**.
+- **Layered Architecture**: Clean separation of concerns across `Controller` ➔ `Service` ➔ `Repository` ➔ `Database (PostgreSQL)` using **Spring Boot** and **Hibernate ORM**.
 - **Stateless JWT Security**: Implemented `JwtAuthenticationFilter` (`OncePerRequestFilter`), HMAC-SHA256 token signing via `JwtTokenProvider`, `BCryptPasswordEncoder`, and Role-Based Access Control (`ROLE_CUSTOMER`, `ROLE_ADMIN`).
 - **Dynamic Product Filtering & Pagination**: Indexed PostgreSQL tables (`idx_product_category`, `idx_product_price`) with parameterized JPQL queries supporting category, brand, price range, minimum rating, keyword search, sorting, and pagination.
 - **Transactional Order Processing & Razorpay Integration**: ACID-compliant `@Transactional` order placement with automatic stock deduction, **Razorpay Order API** creation, and cryptographic HMAC-SHA256 payment signature verification.
-- **Real-Time Order Tracking API**: 6-stage fulfillment state machine (`PLACED` $\rightarrow$ `CONFIRMED` $\rightarrow$ `PACKED` $\rightarrow$ `SHIPPED` $\rightarrow$ `OUT_FOR_DELIVERY` $\rightarrow$ `DELIVERED`) with courier AWB tracking metadata.
+- **Real-Time Order Tracking API**: 6-stage fulfillment state machine (`PLACED` ➔ `CONFIRMED` ➔ `PACKED` ➔ `SHIPPED` ➔ `OUT_FOR_DELIVERY` ➔ `DELIVERED`) with courier AWB tracking metadata.
 
 ---
 
