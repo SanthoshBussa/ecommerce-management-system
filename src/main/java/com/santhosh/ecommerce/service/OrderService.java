@@ -90,7 +90,6 @@ public class OrderService {
 
         order.setTotalAmount(totalAmount);
 
-        // Initialize Razorpay order ID (or simulated ID in local dev mode)
         try {
             if (!razorpayKeyId.contains("placeholder")) {
                 RazorpayClient razorpay = new RazorpayClient(razorpayKeyId, razorpayKeySecret);

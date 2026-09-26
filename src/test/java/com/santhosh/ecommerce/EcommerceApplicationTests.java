@@ -55,8 +55,8 @@ class EcommerceApplicationTests {
         assertEquals("ORD-TEST101", response.getOrderNumber());
         assertEquals(Order.OrderStatus.SHIPPED, response.getCurrentStatus());
         assertEquals(6, response.getTimeline().size());
-        assertTrue(response.getTimeline().get(0).isCompleted()); // PLACED
-        assertTrue(response.getTimeline().get(3).isCurrent());   // SHIPPED
-        assertFalse(response.getTimeline().get(5).isCompleted()); // DELIVERED
+        assertTrue(response.getTimeline().get(0).isCompleted());
+        assertTrue(response.getTimeline().get(3).isCurrent());
+        assertFalse(response.getTimeline().get(5).isCompleted());
     }
 }
