@@ -1,19 +1,14 @@
-# Maven / Java Build Artifacts
 target/
 *.jar
 *.war
 *.class
 .mvn/
 !.mvn/wrapper/maven-wrapper.jar
-
-# IDEs & Editors
 .idea/
 *.iml
 .vscode/
 .settings/
 .classpath
 .project
-
-# OS Files
 .DS_Store
 Thumbs.db

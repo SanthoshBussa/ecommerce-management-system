@@ -60,47 +60,47 @@ flowchart LR
 
 ```text
 ecommerce-management-system/
-├── pom.xml                                  # Root Maven Configuration (Java, Spring Boot)
+├── pom.xml
 ├── postman/
 │   └── Ecommerce_Management_System.postman_collection.json
 └── src/
     ├── main/
     │   ├── java/com/santhosh/ecommerce/
-    │   │   ├── EcommerceApplication.java    # Main Spring Boot Entry Point
+    │   │   ├── EcommerceApplication.java
     │   │   ├── controller/
-    │   │   │   ├── AuthController.java      # /api/v1/auth (Register, Login)
-    │   │   │   ├── ProductController.java   # /api/v1/products (Dynamic Filter, Sort, Paginate)
-    │   │   │   ├── CartController.java      # /api/v1/cart (Add, Remove, View Cart)
-    │   │   │   └── OrderController.java     # /api/v1/orders (Checkout, Razorpay Verify, Track)
+    │   │   │   ├── AuthController.java
+    │   │   │   ├── ProductController.java
+    │   │   │   ├── CartController.java
+    │   │   │   └── OrderController.java
     │   │   ├── dto/
-    │   │   │   ├── AuthDtos.java            # Validated Auth Request/Response DTOs
-    │   │   │   └── OrderDtos.java           # Order, Payment & Tracking Timeline DTOs
+    │   │   │   ├── AuthDtos.java
+    │   │   │   └── OrderDtos.java
     │   │   ├── entity/
-    │   │   │   ├── User.java                # Users table & Role enum
-    │   │   │   ├── Category.java            # Categories table
-    │   │   │   ├── Product.java             # Indexed Products table
-    │   │   │   ├── Cart.java & CartItem.java# Persistent Shopping Cart tables
-    │   │   │   └── Order.java & OrderItem.java # Orders & Line Items tables
+    │   │   │   ├── User.java
+    │   │   │   ├── Category.java
+    │   │   │   ├── Product.java
+    │   │   │   ├── Cart.java & CartItem.java
+    │   │   │   └── Order.java & OrderItem.java
     │   │   ├── exception/
-    │   │   │   └── GlobalExceptionHandler.java # Centralized @RestControllerAdvice
+    │   │   │   └── GlobalExceptionHandler.java
     │   │   ├── repository/
     │   │   │   ├── UserRepository.java
     │   │   │   ├── CategoryRepository.java
-    │   │   │   ├── ProductRepository.java   # Parameterized JPQL Filter Query
+    │   │   │   ├── ProductRepository.java
     │   │   │   ├── CartRepository.java
     │   │   │   └── OrderRepository.java
     │   │   ├── security/
-    │   │   │   ├── JwtTokenProvider.java    # JWT Generation & Claims Validation
+    │   │   │   ├── JwtTokenProvider.java
     │   │   │   ├── JwtAuthenticationFilter.java
     │   │   │   ├── CustomUserDetailsService.java
-    │   │   │   └── SecurityConfig.java      # Stateless SecurityFilterChain
+    │   │   │   └── SecurityConfig.java
     │   │   └── service/
     │   │       ├── AuthService.java
     │   │       ├── ProductService.java
     │   │       ├── CartService.java
     │   │       └── OrderService.java
     │   └── resources/
-    │       └── application.yml              # PostgreSQL, Hibernate, JWT & Razorpay Config
+    │       └── application.yml
     └── test/
         └── java/com/santhosh/ecommerce/
             └── EcommerceApplicationTests.java
@@ -132,11 +132,8 @@ ecommerce-management-system/
 ## 🚀 Build & Run with Maven
 
 ```bash
-# Clone the repository
 git clone https://github.com/SanthoshBussa/ecommerce-management-system.git
 cd ecommerce-management-system
-
-# Start the Spring Boot backend server
 mvn spring-boot:run
 ```
 - **REST API Base URL**: `http://localhost:8080/api/v1`
