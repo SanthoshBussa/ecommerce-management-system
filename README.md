@@ -143,7 +143,7 @@ mvn spring-boot:run
 
 ## 👨‍💻 Author
 
-**Santhosh Bussa** — *Java Backend Developer (1.6+ Years Experience)*
+**Santhosh Bussa** — *Java Backend Developer*
 - 📍 Location: Bangalore, Karnataka, India
 - 🌐 Portfolio: [santhosh-bussa-portfolio.onrender.com](https://santhosh-bussa-portfolio.onrender.com)
 - 💼 LinkedIn: [linkedin.com/in/santhosh-bussa](https://www.linkedin.com/in/santhosh-bussa)
